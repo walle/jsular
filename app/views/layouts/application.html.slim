@@ -1,0 +1,11 @@
+doctype 5
+html
+  head
+    = stylesheet_link_tag 'application', :media => 'screen, projection'
+    = javascript_include_tag 'application'
+    = favicon_link_tag
+    title= 'Jsular: a JavaScript regular expression editor and tester'
+
+  body
+    #page.container
+      = yield
