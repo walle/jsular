@@ -1,1 +1,46 @@
 @import "twitter/bootstrap";
+
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background: url(background.png);
+}
+
+.content {
+  width: 940px;
+  background: #fff;
+  margin-top: 20px;
+  padding: 20px;
+  .rounded-corners;
+  .box-shadow(2px, 5px, 10px);
+}
+
+.logo {
+  text-align: center;
+}
+
+#regex {
+  width: 795px;
+}
+
+#options {
+  width: 90px;
+}
+
+#test {
+  width: 450px;
+}
