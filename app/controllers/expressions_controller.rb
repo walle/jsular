@@ -13,7 +13,7 @@ class ExpressionsController < ApplicationController
     if @expression.save
       redirect_to permalink_path(@expression)
     else
-      redirect_to expressions_path
+      redirect_to root_path
     end
   end
 end
