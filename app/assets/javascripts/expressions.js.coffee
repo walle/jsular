@@ -2,26 +2,36 @@ evaluate = ->
   try
       regex = new RegExp $('#regex').val(), $('#options').val()
     catch e
-      $('#results .no-data').text e.toString()
+      $('#error').html '<h3>Error</h3>' + '<p>' + e + '</p>'
       $('#match-captures').text ''
       $('#match-result').text ''
       return
 
-    matches = regex.exec $('#test').val()
-    if matches
-      $('#results .no-data').text ''
-      $('#match-captures').text ''
-      $('#match-result').text matches[0]
-      if matches.length > 1
-        matches.shift()
-        lis = ($('<li>').text match for match in matches)
-        list = $('<ol>')
-        (list.append li for li in lis)
-        $('#match-captures').append list
+    testdata = $('#test').val()
+    lines = testdata.split(/\n/)
+
+    matchCaptures = ''
+    matchResult = ''
+    $.each(lines, (i, e) ->
+      matches = regex.exec e
+      if matches
+        matchResult += matches[0] + '<br />'
+        if matches.length > 1
+          matches.shift()
+          lis = ($('<li>').text match for match in matches)
+          list = $('<ol>')
+          (list.append li for li in lis)
+          matchCaptures += '<h4>Result ' + (i + 1) + '</h4>' + '<ol>' + list.html() + '</ol>'
+    )
+
+    if matchCaptures.length > 0 && matchResult.length > 0
+      $('#error').html ''
+      $('#match-captures').html '<h3>Match captures</h3>' + '<div>' + matchCaptures + '</div>'
+      $('#match-result').html '<h3>Match result</h3>' + '<p>' + matchResult + '</p>'
     else
-      $('#results .no-data').text 'No matches'
-      $('#match-captures').text ''
-      $('#match-result').text ''
+      $('#error').html '<h3>No matches</h3>'
+      $('#match-captures').html ''
+      $('#match-result').html ''
 
 $(document).ready ->
   evaluate()

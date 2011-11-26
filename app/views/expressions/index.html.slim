@@ -23,11 +23,9 @@
           h3 Your test string
           textarea id='test' name='expression[testdata]'
         .span8
-          #results
-            .no-data
-              ' No valid regular expression
-            #match-result
-            #match-captures
+          #error
+          #match-result
+          #match-captures
       .row
         .span8.offset6
           button.btn.success type="submit" id="make-permalink" Make permalink
