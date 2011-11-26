@@ -1,5 +1,8 @@
 Jsular::Application.routes.draw do
 
-  root :to => 'home#index'
+  resources :expressions, :only => [:index, :show, :create]
+  match '/:id' => 'expressions#show', :as => :permalink
+
+  root :to => 'expressions#index'
 
 end

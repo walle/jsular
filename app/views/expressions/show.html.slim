@@ -5,22 +5,23 @@
     h2 a JavaScript regular expression editor
 
   .application
-    form action="expression/new" method="post"
+    form action="expressions" method="post"
       .row
         .span16
           h3 Your regular expression
         .span14
           p.regex-delimiter
             | /
-          input type='text' id='regex'
+          input type='text' id='regex' name='expression[expression]' value=@expression.expression
           p.regex-delimiter
             | /
         .span2
-          input type='text' id='options'
+          input type='text' id='options' name='expression[modifiers]' value=@expression.modifiers
       .row
         .span8
           h3 Your test string
-          textarea id='test'
+          textarea id='test' name='expression[testdata]'
+            = @expression.testdata
         .span8
           #results
             .no-data
@@ -31,7 +32,7 @@
         .span8.offset6
           button.btn.success type="submit" id="make-permalink" Make permalink
           | &nbsp;
-          button.btn.danger id="clear-fields" Clear fields
+          button.btn.danger type="reset" id="clear-fields" Clear fields
 #reference.content
   h3 Regex quick reference
   .box

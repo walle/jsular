@@ -24,7 +24,3 @@ $(document).ready ->
   $('#regex').keyup evaluate
   $('#options').keyup evaluate
   $('#test').keyup evaluate
-  $('#clear-fields').click ->
-    $('#regex').val ''
-    $('#options').val ''
-    $('#test').val ''
