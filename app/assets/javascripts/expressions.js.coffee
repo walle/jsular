@@ -21,6 +21,7 @@ evaluate = ->
       $('#result.no-data').text 'No matches'
 
 $(document).ready ->
+  evaluate()
   $('#regex').keyup evaluate
   $('#options').keyup evaluate
   $('#test').keyup evaluate
