@@ -2,13 +2,14 @@ evaluate = ->
   try
       regex = new RegExp $('#regex').val(), $('#options').val()
     catch e
-      $('#result.no-data').text 'Error in regex'
+      $('#results .no-data').text e.toString()
       $('#match-captures').text ''
       $('#match-result').text ''
       return
 
     matches = regex.exec $('#test').val()
     if matches
+      $('#results .no-data').text ''
       $('#match-captures').text ''
       $('#match-result').text matches[0]
       if matches.length > 1
@@ -18,7 +19,9 @@ evaluate = ->
         (list.append li for li in lis)
         $('#match-captures').append list
     else
-      $('#result.no-data').text 'No matches'
+      $('#results .no-data').text 'No matches'
+      $('#match-captures').text ''
+      $('#match-result').text ''
 
 $(document).ready ->
   evaluate()
