@@ -1,4 +1,4 @@
-h1. Jsuslar
+h1. Jsular
 
 h2. a JavaScript regular expression editor
 
