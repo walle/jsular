@@ -5,27 +5,33 @@
     h2 a JavaScript regular expression editor
 
   .application
-    .row
-      .span16
-        h3 Your regular expression
-      .span14
-        p.regex-delimiter
-          | /
-        input type='text' id='regex'
-        p.regex-delimiter
-          | /
-      .span2
-        input type='text' id='options'
-    .row
-      .span8
-        h3 Your test string
-        textarea id='test'
-      .span8
-        #results
-          .no-data
-            ' No valid regular expression
-          #match-result
-          #match-captures
+    form action="expression/new" method="post"
+      .row
+        .span16
+          h3 Your regular expression
+        .span14
+          p.regex-delimiter
+            | /
+          input type='text' id='regex'
+          p.regex-delimiter
+            | /
+        .span2
+          input type='text' id='options'
+      .row
+        .span8
+          h3 Your test string
+          textarea id='test'
+        .span8
+          #results
+            .no-data
+              ' No valid regular expression
+            #match-result
+            #match-captures
+      .row
+        .span8.offset6
+          button.btn.success type="submit" id="make-permalink" Make permalink
+          | &nbsp;
+          button.btn.danger id="clear-fields" Clear fields
 #reference.content
   h3 Regex quick reference
   .box
