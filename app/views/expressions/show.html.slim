@@ -35,10 +35,12 @@
           | &nbsp;
           button.btn.danger type="reset" id="clear-fields" Clear fields
 #reference.content
-  h3 Regex quick reference
+  .row
+    .span8.offset6
+      h3 Regex quick reference
   .box
     .row
-      .span-one-third
+      .span6
         p
           strong [abc]
           |  A single character: a, b or c
@@ -63,7 +65,7 @@
         p
           strong \z
           |  End of string
-      .span-one-third
+      .span5
         p
           strong .
           |  Any single character
@@ -88,7 +90,7 @@
         p
           strong \b
           |  Any word boundary character
-      .span-one-third
+      .span5
         p
           strong (...)
           |  Capture everything enclosed
@@ -129,3 +131,8 @@
             |  enables "global" matching replaces all matches, rather than only the first one
 
 #footer
+  p
+    | Made by
+    a href="https://github.com/walle" Fredrik Wallgren
+    | who tweets at
+    a href="http://twitter.com/#!/fredrikwallgren" @fredrikwallgren
