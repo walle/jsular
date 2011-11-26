@@ -7,25 +7,117 @@
   .application
     .row
       .span16
-        p Your regular expression
+        h3 Your regular expression
       .span14
-        ' /
+        p.regex-delimiter
+          | /
         input type='text' id='regex'
-        ' /
+        p.regex-delimiter
+          | /
       .span2
         input type='text' id='options'
     .row
       .span8
-        p Your test string
+        h3 Your test string
         textarea id='test'
       .span8
         #results
           .no-data
-            ' Insert data
+            ' No valid regular expression
           #match-result
           #match-captures
 #reference.content
   h3 Regex quick reference
   .box
-    ' asdasd
+    .row
+      .span-one-third
+        p
+          strong [abc]
+          |  A single character: a, b or c
+        p
+          strong [^abc]
+          |  Any single character but a, b, or c
+        p
+          strong [a-z]
+          |  Any single character in the range a-z
+        p
+          strong [a-zA-Z]
+          |  Any single character in the range a-z or A-Z
+        p
+          strong ^
+          |  Start of line
+        p
+          strong $
+          |  End of line
+        p
+          strong \A
+          |  Start of string
+        p
+          strong \z
+          |  End of string
+      .span-one-third
+        p
+          strong .
+          |  Any single character
+        p
+          strong \s
+          |  Any whitespace character
+        p
+          strong \S
+          |  Any non-whitespace character
+        p
+          strong \d
+          |  Any digit
+        p
+          strong \D
+          |  Any non-digit
+        p
+          strong \w
+          |  Any word character (letter, number, underscore)
+        p
+          strong \W
+          |  Any non-word character
+        p
+          strong \b
+          |  Any word boundary character
+      .span-one-third
+        p
+          strong (...)
+          |  Capture everything enclosed
+        p
+          strong (a|b)
+          |  a or b
+        p
+          strong a?
+          |  Zero or one of a
+        p
+          strong a*
+          |  Zero or more of a
+        p
+          strong a+
+          |  One or more of a
+        p
+          strong a{3}
+          |  Exactly 3 of a
+        p
+          strong a{3,}
+          |  3 or more of a
+        p
+          strong a{3,6}
+          |  Between 3 and 6 of a
+    hr
+    .row
+      .span16
+        #modifiers
+          p options:
+          p
+            strong i
+            |  case insensitive
+          p
+            strong m
+            |  make dot match newlines
+          p
+            strong g
+            |  enables "global" matching replaces all matches, rather than only the first one
+
 #footer
