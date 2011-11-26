@@ -8,6 +8,8 @@ The master branch contains the prototype for now. The real application is being 
 
 The application has permalink support if you want to share your regex, just click the Make permalink button and share the link you get from the address bar.
 
+You can use the application at "http://jsular.com":http://jsular.com
+
 h2. Contribute
 
 All contributions are welcome, just fork the project and open a pull request.
