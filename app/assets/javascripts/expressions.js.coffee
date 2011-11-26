@@ -38,3 +38,9 @@ $(document).ready ->
   $('#regex').keyup evaluate
   $('#options').keyup evaluate
   $('#test').keyup evaluate
+  $('#clear-fields').click (e) ->
+    e.preventDefault()
+    $('#regex').val('')
+    $('#options').val ''
+    $('#test').val ''
+  $('#regex').focus()
