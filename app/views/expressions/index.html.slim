@@ -59,11 +59,14 @@
           strong $
           |  End of line
         p
-          strong \A
-          |  Start of string
+          strong \xxx
+          |  Find the character using an octal number xxx
         p
-          strong \z
-          |  End of string
+          strong \xdd
+          |  Find the character using a hexadecimal number dd
+        p
+          strong \uxxxx
+          |  Find the Unicode character using a hexadecimal number xxxx
       .span5
         p
           strong .
