@@ -2,7 +2,7 @@ h1. Jsuslar
 
 h2. a JavaScript regular expression editor
 
-Jsular is a port of the awesome Rubular:http://rubular.com made by Michael Lovitt but for javascript.
+Jsular is a port of the awesome "Rubular":http://rubular.com made by Michael Lovitt but for javascript.
 
 The master branch contains the prototype for now. The real application is being developed in the complete_rewrite branch.
 
