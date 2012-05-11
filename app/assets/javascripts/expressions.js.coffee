@@ -33,7 +33,7 @@ evaluate = ->
         $('#error').html '<p>Jsular is a JavaScript-based regular expression editor.<br /> It\'s a handy way to test regular expressions as you write them.<br /><br /> To start, enter a regular expression and a test string. Or try an </p>'
         example = $('<a>Example</a>').click (e) ->
           e.preventDefault()
-          $('#regex').val '^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$'
+          $('#regex').val '^([^@\\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$'
           $('#test').val 'launch@bacon.com'
           evaluate()
         $('#error p').append example
